@@ -7,7 +7,7 @@ export default class Welcome extends React.Component {
             <View>
                 <Text>Welcome</Text>
                 <Button title="Let's start" onPress={() => this.props.navigation.navigate('Register')} />
-                <Button title="Log in" onPress={() => this.props.navigation.navigate('LogIn')} />
+                <Button title="Sign in" onPress={() => this.props.navigation.navigate('SignIn')} />
             </View>
         );
     }
