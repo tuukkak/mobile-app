@@ -8,6 +8,6 @@ export default class StyledButton extends React.Component {
 }
 
 const defaultStyle = {
-    backgroundColor: 'rgb(34, 163, 213)',
-    marginVertical: 10
+    backgroundColor: '#22a3d5',
+    marginVertical: 5
 };
