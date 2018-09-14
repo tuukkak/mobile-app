@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text } from 'react-native';
+import Button from 'components/form/Button';
 
 export default class Welcome extends React.Component {
     render() {
@@ -7,7 +8,7 @@ export default class Welcome extends React.Component {
             <View>
                 <Text>Welcome</Text>
                 <Button title="Let's start" onPress={() => this.props.navigation.navigate('Register')} />
-                <Button title="Sign in" onPress={() => this.props.navigation.navigate('SignIn')} />
+                <Button title="I already have an account" onPress={() => this.props.navigation.navigate('SignIn')} />
             </View>
         );
     }

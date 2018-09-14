@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { View } from 'react-native';
 import { SocialIcon } from 'react-native-elements';
 import TextInput from 'components/form/TextInput';
+import Button from 'components/form/Button';
 
 export default class Register extends React.Component {
     render() {
@@ -12,7 +13,7 @@ export default class Register extends React.Component {
                 <TextInput label="Last name" />
                 <TextInput label="Email" />
                 <TextInput label="password" />
-                <Button title="Let's start" onPress={() => this.props.navigation.navigate('Register')} />
+                <Button title="Let's start" onPress={() => {}} />
             </View>
         );
     }
