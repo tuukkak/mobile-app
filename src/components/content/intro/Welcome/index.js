@@ -15,7 +15,7 @@ export default class Welcome extends React.Component {
                         <Text style={{ textAlign: 'center', color: '#fff' }}>Welcome</Text>
                     </View>
                     <View style={{ marginBottom: 50 }}>
-                        <Button title="Let's start" onPress={() => this.props.navigation.navigate('Register')} />
+                        <Button title="Let's start" onPress={() => this.props.navigation.navigate('SignUp')} />
                         <Button
                             title="I already have an account"
                             onPress={() => this.props.navigation.navigate('SignIn')}

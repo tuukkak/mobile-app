@@ -4,7 +4,7 @@ import { SocialIcon } from 'react-native-elements';
 import TextInput from 'components/form/TextInput';
 import Button from 'components/form/Button';
 
-export default class Register extends React.Component {
+export default class SignUp extends React.Component {
     static navigationOptions = {
         title: 'Sign up'
     };

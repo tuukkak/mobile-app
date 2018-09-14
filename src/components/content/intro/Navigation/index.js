@@ -1,11 +1,11 @@
 import { createStackNavigator } from 'react-navigation';
 import Welcome from '../Welcome';
 import SignIn from '../SignIn';
-import Register from '../Register';
+import SignUp from '../SignUp';
 
 export default createStackNavigator({
     Welcome,
-    Register,
+    SignUp,
     SignIn
 }, {
     navigationOptions: {
