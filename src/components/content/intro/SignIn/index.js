@@ -5,6 +5,10 @@ import TextInput from 'components/form/TextInput';
 import Button from 'components/form/Button';
 
 export default class SignIn extends React.Component {
+    static navigationOptions = {
+        title: 'Sign in'
+    };
+
     render() {
         return (
             <View>

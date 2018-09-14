@@ -7,4 +7,8 @@ export default createStackNavigator({
     Welcome,
     Register,
     SignIn
+}, {
+    navigationOptions: {
+        headerBackTitle: null
+    }
 });
