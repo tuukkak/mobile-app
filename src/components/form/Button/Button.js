@@ -3,7 +3,8 @@ import { Button } from 'react-native-elements';
 
 export default class StyledButton extends React.Component {
     render() {
-        return <Button raised rounded buttonStyle={defaultStyle} {...this.props} />;
+        const style = this.props.clear ? { ...defaultStyle, backgroundColor: 'transparent' } : defaultStyle;
+        return <Button raised rounded buttonStyle={style} fontWeight={'bold'} fontSize={16} {...this.props} />;
     }
 }
 

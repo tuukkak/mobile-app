@@ -18,6 +18,7 @@ export default class Welcome extends React.Component {
                     <Button title="Let's start" onPress={() => this.props.navigation.navigate('SignUp')} />
                     <Button
                         title="I already have an account"
+                        clear
                         onPress={() => this.props.navigation.navigate('SignIn')}
                     />
                 </View>
