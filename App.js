@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import axios from 'axios';
 import axiosMiddleware from 'redux-axios-middleware';
-import reducers from 'reducers';
+import reducers from 'ducks';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const client = axios.create({
