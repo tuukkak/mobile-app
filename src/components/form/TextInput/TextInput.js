@@ -9,11 +9,11 @@ export default class TextInput extends React.Component {
     };
 
     render() {
-        const { label } = this.props;
+        const { label, input: { onChange, ...restInput } } = this.props;
         return (
             <View>
                 <FormLabel>{label}</FormLabel>
-                <FormInput />
+                <FormInput onChangeText={onChange} {...restInput} />
             </View>
         );
     }
