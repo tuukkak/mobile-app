@@ -5,7 +5,8 @@ import { FormLabel, FormInput } from 'react-native-elements';
 
 export default class TextInput extends React.Component {
     static propTypes = {
-        label: PropTypes.string.isRequired
+        input: PropTypes.object.isRequired,
+        label: PropTypes.string
     };
 
     render() {
