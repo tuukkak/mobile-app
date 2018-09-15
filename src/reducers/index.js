@@ -3,4 +3,4 @@ import { reducer as form } from 'redux-form';
 import authentication from './authentication';
 import users from './users';
 
-export const reducers = () => combineReducers({ form, authentication, users });
+export default combineReducers({ form, authentication, users });
