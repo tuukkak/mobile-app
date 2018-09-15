@@ -1,7 +1,9 @@
 const SIGNIN = 'app/authentication/SIGNIN';
 const SIGNUP = 'app/authentication/SIGNUP';
 
-const initialState = {};
+const initialState = {
+    token: ''
+};
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
