@@ -5,14 +5,15 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import axios from 'axios';
 import axiosMiddleware from 'redux-axios-middleware';
-import { reducers } from './src/reducers';
+import reducers from 'reducers';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const client = axios.create({
     baseURL: 'https://api.github.com',
     responseType: 'json'
 });
 
-const store = createStore(reducers, applyMiddleware(axiosMiddleware(client)));
+const store = createStore(reducers, composeWithDevTools(applyMiddleware(axiosMiddleware(client))));
 
 export default class App extends React.Component {
     render() {
