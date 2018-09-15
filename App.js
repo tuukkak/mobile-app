@@ -9,7 +9,7 @@ import reducers from 'ducks';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const client = axios.create({
-    baseURL: 'https://api.github.com',
+    baseURL: 'https://jsonplaceholder.typicode.com',
     responseType: 'json'
 });
 

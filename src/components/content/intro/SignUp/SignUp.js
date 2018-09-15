@@ -10,7 +10,7 @@ export default class SignUp extends React.Component {
     };
 
     render() {
-        const { handleSubmit } = this.props;
+        const { handleSubmit, signUp } = this.props;
         return (
             <View>
                 <Button
@@ -23,12 +23,8 @@ export default class SignUp extends React.Component {
                 <Field name="last_name" component={TextInput} label="Last name" />
                 <Field name="email" component={TextInput} label="Email" />
                 <Field name="password" component={TextInput} label="password" />
-                <Button title="Let's start" onPress={handleSubmit(submit)} />
+                <Button title="Let's start" onPress={handleSubmit(signUp)} />
             </View>
         );
     }
 }
-
-const submit = values => {
-    console.log('submitting', values);
-};

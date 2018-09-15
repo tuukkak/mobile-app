@@ -22,23 +22,27 @@ export default function reducer(state = initialState, action) {
     }
 }
 
-export function signIn() {
+export function signIn(data) {
     return {
         type: SIGN_IN,
         payload: {
             request: {
-                url: '/sign-in'
+                method: 'post',
+                url: '/users',
+                data
             }
         }
     };
 }
 
-export function signUp() {
+export function signUp(data) {
     return {
         type: SIGN_UP,
         payload: {
             request: {
-                url: '/sign-up'
+                method: 'post',
+                url: '/users',
+                data
             }
         }
     };

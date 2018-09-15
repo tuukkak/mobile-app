@@ -1,2 +1,2 @@
-import SignIn from './SignInFormContainer';
+import SignIn from './SignInContainer';
 export default SignIn;
