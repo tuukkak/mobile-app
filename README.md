@@ -1,4 +1,4 @@
-# Mobile App Boilerplate
+# React Native Boilerplate
 
 ## Setup
 
