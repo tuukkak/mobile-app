@@ -1,6 +1,6 @@
 import React from 'react';
-import IntroNavigation from './src/components/content/intro/Navigation';
-import MainNavigation from './src/components/content/main/Navigation';
+import IntroNavigation from 'components/content/intro/Navigation';
+import MainNavigation from 'components/content/main/Navigation';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import axios from 'axios';
