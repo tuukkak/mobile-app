@@ -2,6 +2,7 @@
 
 ## Setup
 
+* Rename application in /app.js and /package.json
 * npm install
 * react-native eject
 * react-native link
