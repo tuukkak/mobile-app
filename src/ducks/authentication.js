@@ -1,3 +1,4 @@
+const STORE_TOKEN = 'app/authentication/STORE_TOKEN';
 const SIGN_IN = 'app/authentication/SIGNIN';
 const SIGN_IN_FAIL = `${SIGN_IN}_FAIL`;
 const SIGN_IN_SUCCESS = `${SIGN_IN}_SUCCESS`;
@@ -11,6 +12,8 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
+        case STORE_TOKEN:
+            return { ...state, token: action.token };
         case SIGN_IN:
         case SIGN_IN_FAIL:
         case SIGN_IN_SUCCESS:
@@ -32,6 +35,13 @@ export function signIn(data) {
                 data
             }
         }
+    };
+}
+
+export function storeToken(token) {
+    return {
+        type: STORE_TOKEN,
+        token
     };
 }
 

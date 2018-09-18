@@ -1,6 +1,5 @@
 import React from 'react';
-import IntroNavigation from 'components/content/intro/Navigation';
-import MainNavigation from 'components/content/main/Navigation';
+import BaseView from 'components/BaseView';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import axios from 'axios';
@@ -19,7 +18,7 @@ export default class App extends React.Component {
     render() {
         return (
             <Provider store={store}>
-                <IntroNavigation />
+                <BaseView />
             </Provider>
         );
     }
