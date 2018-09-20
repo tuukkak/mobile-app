@@ -1,28 +1,28 @@
 import React from 'react';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
-import { getToken } from 'services/session-storage';
-import { storeToken } from 'ducks/authentication';
-import IntroNavigation from 'components/content/intro/Navigation';
+import { fetchToken } from 'ducks/authentication';
 import MainNavigation from 'components/content/main/Navigation';
+import IntroNavigation from 'components/content/intro/Navigation';
 
 class BaseView extends React.Component {
     componentDidMount() {
-        if (!this.props.token)
-            getToken().then(token => {
-                this.props.storeToken(token);
-            });
+        if (!this.props.token) this.props.fetchToken();
     }
 
     render() {
-        return this.props.token ? <MainNavigation /> : <IntroNavigation />;
+        if (this.props.loading) return <View />;
+        else if (this.props.token) return <MainNavigation />;
+        else return <IntroNavigation />;
     }
 }
 
 const mapStateToProps = state => ({
-    token: state.authentication.token
+    token: state.authentication.token,
+    loading: state.authentication.loading
 });
 
 export default connect(
     mapStateToProps,
-    { storeToken }
+    { fetchToken }
 )(BaseView);

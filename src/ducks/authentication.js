@@ -1,19 +1,25 @@
+import { getToken } from 'services/session-storage';
+
+const FETCH_TOKEN = 'app/authentication/FETCH_TOKEN';
 const STORE_TOKEN = 'app/authentication/STORE_TOKEN';
-const SIGN_IN = 'app/authentication/SIGNIN';
+const SIGN_IN = 'app/authentication/SIGN_IN';
 const SIGN_IN_FAIL = `${SIGN_IN}_FAIL`;
 const SIGN_IN_SUCCESS = `${SIGN_IN}_SUCCESS`;
-const SIGN_UP = 'app/authentication/SIGNUP';
+const SIGN_UP = 'app/authentication/SIGN_UP';
 const SIGN_UP_FAIL = `${SIGN_UP}_FAIL`;
 const SIGN_UP_SUCCESS = `${SIGN_UP}_SUCCESS`;
 
 const initialState = {
-    token: ''
+    token: null,
+    loading: false
 };
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
+        case FETCH_TOKEN:
+            return { ...state, loading: true };
         case STORE_TOKEN:
-            return { ...state, token: action.token };
+            return { ...state, token: action.token, loading: false };
         case SIGN_IN:
         case SIGN_IN_FAIL:
         case SIGN_IN_SUCCESS:
@@ -25,8 +31,22 @@ export default function reducer(state = initialState, action) {
     }
 }
 
-export function signIn(data) {
-    return {
+export const fetchToken = () => dispatch => {
+    dispatch({ type: FETCH_TOKEN });
+    getToken().then(token => {
+        storeToken(token)(dispatch);
+    });
+};
+
+export const storeToken = token => dispatch => {
+    dispatch({
+        type: STORE_TOKEN,
+        token
+    });
+};
+
+export const signIn = data => dispatch => {
+    dispatch({
         type: SIGN_IN,
         payload: {
             request: {
@@ -35,18 +55,11 @@ export function signIn(data) {
                 data
             }
         }
-    };
-}
+    });
+};
 
-export function storeToken(token) {
-    return {
-        type: STORE_TOKEN,
-        token
-    };
-}
-
-export function signUp(data) {
-    return {
+export const signUp = data => dispatch => {
+    dispatch({
         type: SIGN_UP,
         payload: {
             request: {
@@ -55,5 +68,5 @@ export function signUp(data) {
                 data
             }
         }
-    };
-}
+    });
+};
